@@ -41,9 +41,10 @@ public class Main {
         System.out.println("Kata 9 solved!");
 //        Kata9.execute();
 
-//        assertEquals(Kata10.execute().size(), 2);
-//        System.out.println("Kata 10 solved!");
-//
+        assertEquals(Kata10.execute().size(), 2);
+        System.out.println("Kata 10 solved!");
+//        Kata10.execute();
+
 //        assertEquals(Kata11.execute().size(), 2);
 //        System.out.println("Kata 11 solved!");
 //
