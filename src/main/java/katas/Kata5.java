@@ -18,7 +18,18 @@ import java.util.Map;
 public class Kata5 {
     public static Double execute() {
         List<Movie> movies = DataUtil.getMovies();
+        Double rankingMax = movies.stream()
+                .map(element -> element.getRating())
+                .reduce(0.0, (acum, element) -> {
+                    if (element > acum) {
+                        return element;
+                    } else {
+                        return acum;
+                    }
+                });
 
-        return 3.0;
+        System.out.println(rankingMax);
+
+        return rankingMax;
     }
 }
