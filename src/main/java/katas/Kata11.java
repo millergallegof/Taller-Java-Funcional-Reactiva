@@ -1,11 +1,13 @@
 package katas;
 
+import com.codepoetics.protonpack.StreamUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import util.DataUtil;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
     Goal: Create a datastructure from the given data:
@@ -63,8 +65,33 @@ public class Kata11 {
         List<Map> boxArts = DataUtil.getBoxArts();
         List<Map> bookmarkList = DataUtil.getBookmarkList();
 
-        return ImmutableList.of(ImmutableMap.of("name", "someName", "videos", ImmutableList.of(
-                ImmutableMap.of("id", 5, "title", "The Chamber", "time", 123, "boxart", "someUrl")
-        )));
+        List<Map> dataStructure = lists.stream()
+                .map(lista -> {
+                    List<Map> internalList = videos.stream()
+                            .filter(vid -> vid.get("listId").equals(lista.get("id")))
+                            .map(vid -> {
+                                String url = (String) boxArts.stream()
+                                        .filter(con -> con.get("videoId").equals(vid.get("id")))
+                                        .reduce((acum, boxArt) -> {
+                                            if ((int) boxArt.get("width") * (int) boxArt.get("height") > (int) acum.get("width") * (int) acum.get("height")) {
+                                                return boxArt;
+                                            } else {
+                                                return acum;
+                                            }
+                                        }).get().get("url");
+                                Integer time = (Integer)  bookmarkList.stream()
+                                        .filter(con -> con.get("videoId").equals(vid.get("id")))
+                                        .reduce((acum, element) -> element).get().get("time");
+
+                                return ImmutableMap.of("id", vid.get("id"), "title", vid.get("title"), "time", time, "boxart", url);
+                            })
+                            .collect(Collectors.toList());
+
+                    return ImmutableMap.of("name", lista.get("name"), "videos", internalList);
+                })
+                .collect(Collectors.toList());
+        System.out.println(dataStructure);
+
+        return dataStructure;
     }
 }

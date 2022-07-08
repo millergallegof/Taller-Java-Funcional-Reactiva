@@ -45,9 +45,10 @@ public class Main {
         System.out.println("Kata 10 solved!");
 //        Kata10.execute();
 
-//        assertEquals(Kata11.execute().size(), 2);
-//        System.out.println("Kata 11 solved!");
-//
-//        System.out.println("ALL DONE, you're a functional programming NINJA!");
+        assertEquals(Kata11.execute().size(), 2);
+        System.out.println("Kata 11 solved!");
+//        Kata11.execute();
+
+        System.out.println("ALL DONE, you're a functional programming NINJA!");
     }
 }
