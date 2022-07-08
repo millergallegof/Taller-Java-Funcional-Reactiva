@@ -15,8 +15,9 @@ public class Main {
         System.out.println("Kata 3 solved!");
 //        Kata3.execute();
 
-//        assertEquals(Kata4.execute().size(), 4);
-//        System.out.println("Kata 4 solved!");
+        assertEquals(Kata4.execute().size(), 4);
+        System.out.println("Kata 4 solved!");
+//        Kata4.execute();
 //
 //        assertEquals(Kata5.execute(), 5.0, 0.0);
 //        System.out.println("Kata 5 solved!");
