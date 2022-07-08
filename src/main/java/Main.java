@@ -9,10 +9,11 @@ public class Main {
         System.out.println("Kata 1 solved!");
 
         assertEquals(Kata2.execute().size(), 2);
-        Kata2.execute();
+//        Kata2.execute();
 
         assertEquals(Kata3.execute().size(), 4);
         System.out.println("Kata 3 solved!");
+//        Kata3.execute();
 
 //        assertEquals(Kata4.execute().size(), 4);
 //        System.out.println("Kata 4 solved!");
