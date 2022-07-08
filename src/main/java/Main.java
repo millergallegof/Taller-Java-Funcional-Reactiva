@@ -29,12 +29,14 @@ public class Main {
         System.out.println("Kata 6 solved!");
 //        Kata6.execute();
 
-//        assertEquals(Kata7.execute().size(), 4);
-//        System.out.println("Kata 7 solved!");
-//
-//        assertEquals(Kata8.execute().size(), 3);
-//        System.out.println("Kata 8 solved!");
-//
+        assertEquals(Kata7.execute().size(), 4);
+        System.out.println("Kata 7 solved!");
+//        Kata7.execute();
+
+        assertEquals(Kata8.execute().size(), 3);
+        System.out.println("Kata 8 solved!");
+//        Kata8.execute();
+
 //        assertEquals(Kata9.execute().size(), 4);
 //        System.out.println("Kata 9 solved!");
 //
