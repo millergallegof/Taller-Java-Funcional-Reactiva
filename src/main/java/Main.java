@@ -27,7 +27,7 @@ public class Main {
 
         assertEquals(Kata6.execute(), "http://cdn-0.nflximg.com/images/2891/Fracture300.jpg");
         System.out.println("Kata 6 solved!");
-        Kata6.execute();
+//        Kata6.execute();
 
 //        assertEquals(Kata7.execute().size(), 4);
 //        System.out.println("Kata 7 solved!");
